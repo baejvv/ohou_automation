@@ -1,10 +1,10 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from ohou_ui.android.utils.locators import *
 
-class PlayStore:
+class PlayStorePage:
 
     def __init__(self, wd):
-        self.wd = WebDriverWait(wd, 10)
+        self.wd = WebDriverWait(wd, 20)
 
     def search_btn(self):
         try:
@@ -25,8 +25,16 @@ class PlayStore:
 
     def app_name(self):
         try:
-            app_name = xq_access(self.wd, "오늘의집 - 라이프스타일 슈퍼앱\n설치됨\n")
+            app_name = xq_access(self.wd, "오늘의집 - 라이프스타일 슈퍼앱\nBUCKETPLACE\n")
             return app_name
+        except Exception as e:
+            result = "fail"
+            print(e)
+
+    def install_app_btn(self):
+        try:
+            install_app_btn = xq_access(self.wd, "설치")
+            return install_app_btn
         except Exception as e:
             result = "fail"
             print(e)
