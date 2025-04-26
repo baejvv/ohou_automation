@@ -1,13 +1,12 @@
 import os
 import requests
-import unittest
 
 
 API_KEY = os.getenv("SK_OPENAPI_KEY")
 BASE_URL = "https://apis.openapi.sk.com"
 HEADERS = {
     "accept": "application/json",
-    "appKey": "kgZ9b3zTizamnilzmy0Yi7ujm95nYuJK4GpxpzAa"
+    "appKey": "{YOUR-APP_KEY}"
 }
 
 # TC 1. 응답코드 200, 인자로 전달한 키워드가 검색 결과에 포함됐느닞 확인, 검색 결과 5개 확인
