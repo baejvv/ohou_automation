@@ -12,7 +12,7 @@ class TestRunner(unittest.TestCase):
         self.wd.quit()
 
     def test_00_run(self):
-        PlayStoreTestCase.search(self, self.wd)
+        PlayStoreTestCase.search_and_open_app(self, self.wd)
 
 
 
