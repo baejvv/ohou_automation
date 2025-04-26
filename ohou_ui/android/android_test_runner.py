@@ -11,19 +11,19 @@ from ohou_ui.android.testcase.login_test import LogInTestCase
 
 class TestRunner(unittest.TestCase):
 
-    # @classmethod
-    # def setUpClass(cls):
-    #     # Appium 서버 실행
-    #     cls.server = start_appium_server()
-    #     sleep(5)  # 서버 완전히 뜰 때까지 대기
-    #     print("Appium 서버 실행 완료")
-    #
-    # @classmethod
-    # def tearDownClass(cls):
-    #     # Appium 서버 종료
-    #     cls.server.terminate()
-    #     cls.server.wait()
-    #     print("Appium 서버 종료 완료")
+    @classmethod
+    def setUpClass(cls):
+        # Appium 서버 실행
+        cls.server = start_appium_server()
+        sleep(5)  # 서버 완전히 뜰 때까지 대기
+        print("Appium 서버 실행 완료")
+
+    @classmethod
+    def tearDownClass(cls):
+        # Appium 서버 종료
+        cls.server.terminate()
+        cls.server.wait()
+        print("Appium 서버 종료 완료")
 
     def setUp(self):
         self.wd_ohou = None
@@ -44,15 +44,15 @@ class TestRunner(unittest.TestCase):
         LogInTestCase.login(self, self.wd_ohou)
 
 
-# def start_appium_server():
-#     # Appium 서버 실행 명령어
-#     command = [
-#         "appium",
-#         "--allow-insecure", "chromedriver_autodownload",
-#         "--port", "4723",
-#     ]
-#     server = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-#     return server
+def start_appium_server():
+    # Appium 서버 실행 명령어
+    command = [
+        "appium",
+        "--allow-insecure", "chromedriver_autodownload",
+        "--port", "4723",
+    ]
+    server = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    return server
 
 
 if __name__ == '__main__':
