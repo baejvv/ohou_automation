@@ -28,6 +28,8 @@ ohou_automation
 │      ├── locators.py      # 자주 쓰는 로케이터 
 │      └── set_clipboard.py     # 클립보드 복사 간소화 코드
 └── rest_api
+│  ├── SKT_openai
+│      ├── testcase.py
 └── __init__.py
 ~~~
 
